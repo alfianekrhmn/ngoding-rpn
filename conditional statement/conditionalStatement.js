@@ -8,7 +8,7 @@ program roleplay
 5. kalau kamu tidak memasukan role kamu, responnya akan "tapi kayaknya kamu jadi bot aja ya, peran yang kamu pilih ga ada"
 */
 let nama = "Alfian";
-let peran = "";
+let peran = "Ksatria";
 if(nama == "") 
 {
     console.log(`nama wajib diisi`);
@@ -30,5 +30,52 @@ else if(peran == "")
 
 console.log(`nomor 2`);
 /*
-
+1. user memasukan hari, lalu bulan dan terakhir tahun
+2. setelah semuanya dimasukan, jika isi dari variabel bulan adalah 1 maka outputnya adalah Januari dan begitu juga seterusnya
+3. lalu semuanya akan menghasilkan 21 Januari 1945
 */
+
+let hari = 21;
+let bulan = 1;
+let tahun = 1945;
+
+switch (bulan) {
+  case 1:
+    bulan = "Januari";
+    break;
+  case 2:
+    bulan = "Februari";
+    break;
+  case 3:
+    bulan = "Maret";
+    break;
+  case 4:
+    bulan = "April";
+    break;
+  case 5:
+    bulan = "Mei";
+    break;
+  case 6:
+    bulan = "Juni";
+    break;
+  case 7:
+    bulan = "Juli";
+    break;
+  case 8:
+    bulan = "Agustus";
+    break;
+  case 9:
+    bulan = "September";
+    break;
+  case 10:
+    bulan = "Oktober";
+    break;
+  case 11:
+    bulan = "November";
+    break;
+  case 12:
+    bulan = "Desember";
+    break;
+}
+
+console.log(`${hari} ${bulan} ${tahun}`)
