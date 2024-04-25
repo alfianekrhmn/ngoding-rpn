@@ -1,5 +1,5 @@
 function targetTerdekat(arr) {
-  console.log("ini adalah test")
+  let xIndex = arr[x]
   }
   
   // TEST CASES
