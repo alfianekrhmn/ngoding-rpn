@@ -1,5 +1,5 @@
 function targetTerdekat(arr) {
-    
+  console.log("ini adalah test")
   }
   
   // TEST CASES
