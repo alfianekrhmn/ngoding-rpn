@@ -1,28 +1,54 @@
 function changeMe(arr) {
-    
+  for(let i = 0; i <= arr.length -1; i++) {
+  if(i === 0) console.log(`1. ${arr[i][0]} ${arr[i][1]}`)
+      
+  let biography = {
+  firstName : arr[i][0],
+  lastName : arr[i][1],
+  gender : arr[i][2],
+  age :  arr[i][3]
   }
+  if(biography.age !== undefined) biography.age = new Date().getFullYear() - biography.age  
+  else biography.age = 'Invalid Birth Year';
   
-  // TEST CASES
-  changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 1. Christ Evans:
-  // Christ Evans: { firstName: 'Christ',
-  //   lastName: 'Evans',
-  //   gender: 'Male',
-  //   age: 41 } 2023 - 1982 = 41 kan yak wkwk
-  // Robert Downey: { firstName: 'Robert',
-  //   lastName: 'Downey',
-  //   gender: 'Male',
-  //   age: 'Invalid Birth Year' }
-  
-  changeMe([]); // ""
+  console.log(biography);
+  }
+}
+
+// TEST CASES
+changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 1. Christ Evans:
+// Christ Evans: { firstName: 'Christ',
+//   lastName: 'Evans',
+//   gender: 'Male',
+//   age: 41 } 2023 - 1982 = 41 kan yak wkwk
+// Robert Downey: { firstName: 'Robert',
+//   lastName: 'Downey',
+//   gender: 'Male',
+//   age: 'Invalid Birth Year' }
+
+changeMe([]); // ""
 
   function shoppingTime(memberId, money) {
-    const product = {
-        sepatuStacattu: 1500000,
-        bajuZoro: 500000,
-        bajuHnn: 250000,
-        sweatherUnikloh: 175000,
-        casingHandphone: 50000
-    }
+    const product = [{
+      namaBarang: 'Sepatu Brand Stacattu',
+      harga: 1500000 
+  },
+  {
+      namaBarang: 'Baju Brand Zoro',
+      harga: 500000
+  },
+  {
+      namaBarang: 'Baju Brand H&N',
+      harga: 250000
+  },
+  {
+      namaBarang: 'Sweater Brand UnikLooh',
+      harga: 175000
+  },
+  {
+      namaBarang: 'Casing Handphone',
+      harga: 50000
+  }]
     if(memberId === ``){
         return `Mohon maaf, toko X hanya berlaku untuk member saja`
     }else if(money < 50000){
@@ -30,7 +56,19 @@ function changeMe(arr) {
     }else if(memberId == null && money == null){
         return `Mohon maaf, toko X hanya berlaku untuk member saja`
     }else if(memberId !== '' && money > 50000){
-        
+        let result = {
+          memberId: memberId,
+          money: money,
+          listPurchased: [],
+          changeMoney: money
+        }
+        for(let i = 0; i <= product.length -1; i++) {
+          if(result.changeMoney >= product[i].harga) {
+          result.changeMoney -= product[i].harga;
+          result.listPurchased.push(product[i].namaBarang)
+          }
+      }
+      return result
     }
   }
   
